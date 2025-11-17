@@ -1,0 +1,132 @@
+/* Reset và Font chữ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #fff;
+    color: #111;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Toàn bộ ứng dụng */
+.app-container {
+    width: 100%;
+    max-width: 800px; /* Giới hạn chiều rộng như CS50.ai */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Header */
+.app-header {
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.app-header h1 {
+    font-size: 1.5rem; /* Cỡ chữ 🦆🧡🧡🧡 */
+    font-weight: 700;
+    text-align: center;
+}
+
+/* Khung chat */
+.chat-box {
+    flex-grow: 1; /* Quan trọng: đẩy khung input xuống dưới */
+    overflow-y: auto;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    /* Tạo khoảng đệm ở dưới cùng để tin nhắn cuối
+      không bị che bởi khung chat
+    */
+    padding-bottom: 80px; 
+}
+
+/* Định dạng tin nhắn */
+.message {
+    max-width: 90%;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.message p {
+    margin: 0;
+}
+
+/* Tin nhắn của AI (Vịt) */
+.message.ai {
+    align-self: flex-start;
+    background-color: #fcfcfc;
+    border-left: 4px solid #f0de78; /* Viền vàng đặc trưng */
+    padding: 1rem 1.25rem;
+}
+
+/* Nhãn 'ddb' của Vịt */
+.sender-label {
+    display: block;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+    color: #333;
+}
+
+/* Tin nhắn của Người dùng */
+.message.user {
+    align-self: flex-end;
+    background-color: #f4f4f4; /* Màu xám nhạt */
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+}
+
+/* Khung nhập liệu (Dính ở dưới cùng) */
+.chat-form {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+}
+
+#user-input {
+    flex-grow: 1;
+    border: none;
+    font-size: 1rem;
+    padding: 0.5rem;
+}
+
+#user-input:focus {
+    outline: none; /* Bỏ viền xanh khi bấm vào */
+}
+
+.chat-form button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #888;
+    padding: 0.5rem;
+}
+
+.chat-form button:hover {
+    color: #111;
+}
+
+.chat-form button svg {
+    width: 20px;
+    height: 20px;
+}
